@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Receive Quotation | Hertz Building Construction</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+  <style>
+    .quotation-section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(rgba(13,13,13,0.70),rgba(13,13,13,0.70)), url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1974&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center;
+      padding: 0;
+    }
+    .quotation-box {
+      background: #181818;
+      border-radius: 18px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+      padding: 2.5rem 2rem 2rem 2rem;
+      max-width: 420px;
+      width: 95%;
+      color: #fff;
+      position: relative;
+      margin: 2rem 0;
+    }
+    .quotation-logo {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #C8A96B;
+      font-family: 'Montserrat',sans-serif;
+      margin-bottom: 0.5rem;
+      text-align: center;
+      letter-spacing: 2px;
+    }
+    .quotation-title {
+      font-size: 2rem;
+      font-family: 'Montserrat',sans-serif;
+      color: #fff;
+      margin-bottom: 1.2rem;
+      text-align: center;
+    }
+    .quotation-box label {
+      font-weight: 600;
+      color: #C8A96B;
+      margin-bottom: 0.2rem;
+      display: block;
+    }
+    .quotation-box input,
+    .quotation-box textarea {
+      width: 100%;
+      margin-bottom: 1.2rem;
+      padding: 0.7rem 1rem;
+      border: 1px solid #333;
+      border-radius: 8px;
+      background: #222;
+      color: #fff;
+      font-size: 1rem;
+      font-family: inherit;
+      transition: border 0.2s;
+    }
+    .quotation-box input:focus,
+    .quotation-box textarea:focus {
+      border: 1.5px solid #C8A96B;
+      outline: none;
+    }
+    .quotation-box .btn {
+      width: 100%;
+      margin-top: 0.5rem;
+      font-size: 1.1rem;
+    }
+    .confirmationMsg {
+      display: none;
+      color: #C8A96B;
+      margin-top: 1.5rem;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    .back-link {
+      display: block;
+      text-align: center;
+      margin-top: 2.2rem;
+      color: #C8A96B;
+      font-weight: 600;
+      letter-spacing: 1px;
+      transition: color 0.2s;
+    }
+    .back-link:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <section class="quotation-section">
+    <div class="quotation-box">
+      <div class="quotation-logo">HERTZ</div>
+      <div class="quotation-title">Request a Quotation</div>
+      <form id="quotationForm" autocomplete="off">
+        <label for="clientEmail">Your Email</label>
+        <input type="email" id="clientEmail" name="clientEmail" required placeholder="e.g. jameskim@gmail.com">
+        <label for="projectDetails">Project Details</label>
+        <textarea id="projectDetails" name="projectDetails" required rows="5" placeholder="Describe your project, requirements, and expectations..."></textarea>
+        <button type="submit" class="btn primary-btn">Submit</button>
+      </form>
+      <div class="confirmationMsg" id="confirmationMsg">Thank you! We will contact you soon with a quotation and expectations.</div>
+      <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Home</a>
+    </div>
+  </section>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const quotationForm = document.getElementById("quotationForm");
+      const confirmationMsg = document.getElementById("confirmationMsg");
+      quotationForm.addEventListener("submit", function(e) {
+        e.preventDefault();
+        quotationForm.style.display = "none";
+        confirmationMsg.style.display = "block";
+        // Add SMTP/email logic here later
+      });
+    });
+  </script>
+</body>
+</html>
